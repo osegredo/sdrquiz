@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segredos da Reconquista - Quiz</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .body {
+            background: url('img/bg.jpg') repeat #360e9a ;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body">
+        <div class="container paddedDiv">
+            <h1 class="px-3 heebo">74% Das Mulheres <span class="text-nowrap">Não Sabem</span> <span
+                    class="text-nowrap">Que Esse Método Existe...</span></h1>
+        </div>
+
+        <div class="contentContainer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 p-3 text-center py-auto">
+                        <img src="img/img-bm.jpg" alt="Imagem" class="img-fluid headerImage roundCorners shadow-white">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 my-auto col-quiz roundCorners shadow-white">
+                        <!--Quiz-->
+                        <div class="container-fluid container-questions">
+
+                            <!--barra de progresso quiz-->
+                            <div class="pb-2">
+                                <div id="quizProgressDiv" class="progress"
+                                    style="border-radius: 20px;height: 40px; display: none;">
+                                    <div id="quizProgressBar"
+                                        class="progress-bar progress-bar-striped progress-bar-animated bg-primary text-light"
+                                        role="progressbar" style="border-radius: 20px; width: 0%;">
+                                        <span id="quizProgressText">0%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="q1Div">
+                                <h4 class="quizQuestionTitle"> <span class="text-smallcaps">Questão 1:</span></h4>
+                                <p>Você já está em um Relacionamento?</p>
+                                <div class="div-button">
+                                    <button class="button-question-yes" onclick="answerQuizQuestion(1, 'Yes')"><i
+                                            class="fa fa-check-circle-o"></i> Sim</button>
+                                    <button class="button-question-no" onclick="answerQuizQuestion(1, 'No')"><i
+                                            class="fa fa-times-circle"></i> Não</button>
+                                </div>
+                            </div>
+
+                            <div id="q2Div" style="display: none;">
+                                <h4 class="quizQuestionTitle"> <span class="text-smallcaps">Questão 2:</span></h4>
+                                <p>Quem terminou seu último Relacionamento?</p>
+                                <div class="div-button">
+                                    <button class="button-question-yes" onclick="answerQuizQuestion(2, 'Yes')"><i
+                                            class="fa fa-check-circle-o"></i> Ele</button>
+                                    <button class="button-question-no" onclick="answerQuizQuestion(2, 'No')"><i
+                                            class="fa fa-times-circle"></i> Eu</button>
+                                </div>
+                            </div>
+
+                            <div id="q3Div" style="display: none;">
+                                <h4 class="quizQuestionTitle"> <span class="text-smallcaps">Questão 3:</span></h4>
+                                <p>Esta apaixonada por alguém?</p>
+                                <div class="div-button">
+                                    <button class="button-question-yes" onclick="answerQuizQuestion(3, 'Yes')"><i
+                                            class="fa fa-check-circle-o"></i> Sim</button>
+                                    <button class="button-question-no" onclick="answerQuizQuestion(3, 'No')"><i
+                                            class="fa fa-times-circle"></i> Não</button>
+                                </div>
+                            </div>
+
+                            <div id="q4Div" style="display: none;">
+                                <h4 class="quizQuestionTitle"> <span class="text-smallcaps">Question 4:</span></h4>
+                                <p>Deseja ter um relacionamento feliz e duradouro?</p>
+                                <div class="div-button">
+                                    <button class="button-question-yes" onclick="answerQuizQuestion(4, 'Yes')"><i
+                                            class="fa fa-check-circle-o"></i> Sim</button>
+                                    <button class="button-question-no" onclick="answerQuizQuestion(4, 'No')"><i
+                                            class="fa fa-times-circle"></i> Não</button>
+                                </div>
+                            </div>
+
+                            <div id="validateDiv" style="display: none;">
+
+                                <div id="validatingDiv">
+                                    <h4 class="quizQuestionTitle"> <span class="text-smallcaps">Obrigado!</span></h4>
+                                    <p>Nosso Sistema Inteligente está avaliando suas respostas...</p>
+                                    <div class="progress" style="border-radius: 20px;height: 40px;">
+                                        <div id="analyzeBar"
+                                            class="progress-bar progress-bar-striped progress-bar-animated bg-success text-light"
+                                            role="progressbar" style="border-radius: 20px; width: 5%;">
+                                            <span id="analyzeText">5%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="validatedDiv" style="display: none;">
+                                    <h4 class="quizQuestionTitle"> <span class="text-smallcaps">Ótimas Notícias!</span>
+                                    </h4>
+                                    <p>Nosso Sistema Determinou Que <span class="text-nowrap">Este "Método"</span> Pode
+                                        Funcionar Para Você Também!</p>
+                                    <form id="linkForm" action="https://bit.ly/3bpMyOS" method="post">
+                                        <button class="button-question-yes final-button">Clique Aqui Para Descobrir
+                                            Esse <span class="text-nowrap">"Método" Secreto...</span>
+                                        </button>
+                                    </form>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer pt-2 pb-1">
+            <div class="container text-center">
+                <p class="small">&copy; 2020 - Todos o direitos reservados <br>Este site não faz parte nem é endossado
+                    pelo
+                    Facebook. Facebook é uma marca comercial da Facebook, Inc.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/functions.js"></script>
+</body>
+
+</html>
